@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import { User } from "../models/UserModel";
-import { sendEmail, signToken } from "../utils/helpers";
+import { sendEmail, sendEmail2, signToken } from "../utils/helpers";
 import { BASE_URL, JWT_SECRET } from "../utils/env";
 import jwt from "jsonwebtoken";
 
@@ -30,7 +30,7 @@ export const register = async (req: Request, res: Response) => {
 
     const verificationLink = `${BASE_URL}/verify/${verificationToken}`;
 
-    await sendEmail({
+    await sendEmail2({
       name,
       email,
       type: "verify",

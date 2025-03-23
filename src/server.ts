@@ -11,7 +11,6 @@ import cookieParser from "cookie-parser";
 import { JWT_SECRET, MONGO_URI } from "./utils/env";
 import morgan from "morgan";
 import { resetPassword, verificationEmail } from "./controllers/authController";
-import ejs from "ejs";
 import jwt from "jsonwebtoken";
 import { User } from "./models/UserModel";
 
